@@ -117,6 +117,10 @@ a:active {
   transform: translate(-3px, 3px) rotate(-45deg);
 }
 
+.nav-modal {
+  display: none;
+}
+
 /* Responsive Section */
 @media (min-width: 900px) {
   .hamburger {
