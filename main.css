@@ -41,7 +41,6 @@ a:hover {
 }
 
 a:active {
-  color: red;
 }
 
 /*Reusable*/
@@ -60,6 +59,7 @@ a:active {
 }
 
 .nav-logo {
+  display: none;
   font-size: 2.5rem;
   font-weight: 600;
 }
@@ -90,7 +90,7 @@ a:active {
   margin-bottom: 5px;
   position: relative;
 
-  background-color: red;
+  background-color: black;
   border-radius: 6px;
   z-index: 1;
 
@@ -101,7 +101,7 @@ a:active {
 
 .hamburger:hover span:nth-child(2) {
   transform: translateX(10px);
-  background-color: red;
+  background-color: black;
 }
 
 .hamburger.is-active span:nth-child(1) {
@@ -117,16 +117,62 @@ a:active {
   transform: translate(-3px, 3px) rotate(-45deg);
 }
 
+.nav-modal-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 30px;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  display: grid;
+  place-items: center;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.4s;
+}
+
+.modal-bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
 .nav-modal {
-  display: none;
+  background-color: #fff;
+  width: 80%;
+  height: 90%;
+  position: relative;
+}
+
+.nav-modal-logo {
+  padding: 3rem;
+  display: grid;
+  place-items: center;
+
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.nav-modal-menu {
+  display: grid;
+  place-items: center;
+  gap: 2rem;
 }
 
 /* Responsive Section */
-@media (min-width: 900px) {
+@media (min-width: 800px) {
   .hamburger {
     display: none;
   }
   .nav-menu {
     display: flex;
+  }
+  .nav-logo {
+    display: flex;
+  }
+  .nav-modal-bg {
+    display: none;
   }
 }
